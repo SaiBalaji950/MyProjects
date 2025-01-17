@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.6)),url('/static/05.webp');
+            background-size: cover; 
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .image-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px; 
+        }
+        .image-container img {
+            max-width: 300px; 
+            height: auto;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+        }
+        .details {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="details">
+        <h1>Prediction Result</h1>
+        <p><strong>Disease:</strong> {{ disease }}</p>
+    </div>
+    
+    <div class="image-container">
+        <div>
+            <h3>Real Image</h3>
+            <img src="{{ real_image_path }}" alt="Real Image">
+        </div>
+        <div>
+            <h3>Erosion</h3>
+            <img src="{{ erosion_image_path }}" alt="Erosion Image">
+        </div>
+        <div>
+            <h3>Dilation</h3>
+            <img src="{{ dilation_image_path }}" alt="Dilation Image">
+        </div>
+    </div>
+    <div class="details">
+        <p><strong>Accuracy:</strong> {{ accuracy }}%</p>
+        <p><strong>Remedy:</strong> {{ remedy }}</p>
+        <a href='/index'>Go Back</a>
+        <a href='/performance'>Performance Analysis</a>
+    </div>
+</body>
+</html>
