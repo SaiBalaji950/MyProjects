@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.3)), url('/static/25.avif');
+            background-size: cover; 
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .image-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px; 
+        }
+        .image-container img {
+            max-width: 300px; 
+            height: auto;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+        }
+        a {
+            margin: 5px;
+            text-decoration: none;
+            color: #007BFF;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Prediction Result</h1>
+    <h3>Predicted Class: {{ disease }}</h3>
+    <h4>Accuracy: {{ accuracy }}%</h4>
+    <h5>Suggested Remedy: {{ remedy }}</h5>
+    <a href="/index">Go Back</a>
+    <a href="/performance">Performance</a>
+    <div class="image-container">
+        <div>
+            <h5>Original Image:</h5>
+            <img src="{{ real_image_path }}" alt="Original Image">
+        </div>
+        <div>
+            <h5>Grading Image:</h5>
+            <img src="{{ grading_image_path }}" alt="Grading Image">
+        </div>
+    </div>
+</body>
+</html>
