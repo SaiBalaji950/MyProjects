@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Performance</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: cover;
+            margin: 0;
+        }
+        h1 {
+            margin-bottom: 20px;
+            color: black;
+        }
+        img {
+            margin: 20px;
+            max-width: 80%;
+        }
+        a {
+            text-decoration: none;
+            font-size: 16px;
+            color: blue;
+            margin-top: 20px;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Performance Results</h1>
+    <div>
+        <h3>Confusion Matrix - Test Set</h3>
+        <img src="{{ cm_test_path }}" alt="Confusion Matrix - Test Set">
+    </div>
+    <div>
+        <h3>Confusion Matrix - Train Set</h3>
+        <img src="{{ cm_train_path }}" alt="Confusion Matrix - Train Set">
+    </div>
+    <a href="/chart">Chart</a>
+</body>
+</html>
