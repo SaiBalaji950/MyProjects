@@ -8,7 +8,6 @@ so follow the link and download it.
 
 Directory should be like this:
 
-
 project/
 ├── static/
 │   ├── css
