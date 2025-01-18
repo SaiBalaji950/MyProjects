@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,1.0)),url('/static/15.webp');
+            background-size: cover; 
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between; 
+            height: 100vh; 
+            margin: 0;
+        }
+        .image-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px; 
+        }
+        .image-container img {
+            max-width: 300px; 
+            height: auto;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+        }
+        .details {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .color-images {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .color-images img {
+            max-width: 200px;
+            height: auto;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="details">
+        <h1>Prediction Result</h1>
+        <p><strong>Disease:</strong> {{ disease or "No disease detected" }}</p>
+        <p><strong>Accuracy:</strong> {{ accuracy }}%</p>
+        <a href='/index'>Go Back</a>
+        <a href='/performance'>Performance Analysis</a>
+    </div>
+    
+    <div class="image-container">
+        <div>
+            <h3>Real Image</h3>
+            <img src="{{ real_image_path }}" alt="Real Image">
+        </div>
+    </div>
+
+    <div class="color-images">
+        <div>
+            <h3>RGB Color Image</h3>
+            <img src="{{ rgb_image_path }}" alt="RGB Image">
+        </div>
+        <div>
+            <h3>HSV Color Image</h3>
+            <img src="{{ hsv_image_path }}" alt="HSV Image">
+        </div>
+        <div>
+            <h3>YCbCr Color Image</h3>
+            <img src="{{ ycbcr_image_path }}" alt="YCbCr Image">
+        </div>
+        <div>
+            <h3>HLS Color Image</h3>
+            <img src="{{ hls_image_path }}" alt="HLS Image">
+        </div>
+        <div>
+            <h3>XYZ Color Image</h3>
+            <img src="{{ xyz_image_path }}" alt="XYZ Image">
+        </div>
+    </div>
+</body>
+</html>
