@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fetal Health Prediction</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-image: url('/static/1.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      padding: 20px;
+    }
+    h1 {
+      color: whitesmoke;
+      font-size: 50px;
+      margin-bottom: 20px;
+    }
+    table {
+      width: 450px;
+      border-collapse: collapse;
+      background-color: white;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+    }
+    td {
+      padding: 10px;
+    }
+    input[type="text"] {
+      width: 90%;
+      padding: 8px;
+      margin: 5px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    input[type="submit"] {
+      background-color: blue;
+      color: white;
+      border: none;
+      padding: 10px;
+      border-radius: 4px;
+      cursor: pointer;
+      width: 100%;
+    }
+    input[type="submit"]:hover {
+      background-color: darkblue;
+    }
+  </style>
+</head>
+<body>
+  <h1>Fraud Detection</h1>
+  <form action="/predict" method="POST">
+    <table>
+      <tr><td><label>Step</label></td><td><input type="text" name="step" required></td></tr>
+      <tr><td><label>Type</label></td><td><input type="text" name="type" required></td></tr>
+      <tr><td><label>Amount</label></td><td><input type="text" name="amount" required></td></tr>
+      <tr><td><label>oldbalanceOrg</label></td><td><input type="text" name="oldbalanceOrg" required></td></tr>
+      <tr><td><label>newbalanceOrig</label></td><td><input type="text" name="newbalanceOrig" required></td></tr>
+      <tr><td><label>oldbalanceDest</label></td><td><input type="text" name="oldbalanceDest" required></td></tr>
+      <tr><td><label>newbalanceDest</label></td><td><input type="text" name="newbalanceDest" required></td></tr>
+      <tr><td colspan="2"><input type="submit" value="Predict"></td></tr>
+    </table>
+  </form>
+</body>
+</html>

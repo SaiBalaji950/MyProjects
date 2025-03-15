@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Performance Analysis</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background-color: #f0f8ff;
+      text-align: center;
+    }
+    .chart-container {
+      width: 60%;
+      margin: 0 auto;
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <h1>Fraud Detection</h1>
+  <div class="chart-container">
+    <canvas id="healthPieChart"></canvas>
+  </div>
+  <script>
+    // Fetch data passed from Flask
+    const labels = {{ labels | safe }};
+    const values = {{ values | safe }};
+    // Create Pie Chart
+    var ctx = document.getElementById('healthPieChart').getContext('2d');
+    var healthPieChart = new Chart(ctx, {
+      type: 'pie',
+      data: {
+        labels: labels,
+        datasets: [{
+          data: values,
+          backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56'],
+          borderColor: '#fff',
+          borderWidth: 1
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { position: 'top' },
+          tooltip: { enabled: true }
+        }
+      }
+    });
+  </script>
+</body>
+</html>
