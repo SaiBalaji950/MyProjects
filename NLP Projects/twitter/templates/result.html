@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f2f5;
+            padding: 50px;
+        }
+        .container {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+            width: 60%;
+            max-width: 500px;
+            margin: auto;
+        }
+        h1 {
+            color: #222;
+            margin-bottom: 15px;
+        }
+        .tweet-box {
+            background: #f8f9fa;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 18px;
+            color: #333;
+            word-wrap: break-word;
+            margin-bottom: 15px;
+        }
+        .result {
+            font-size: 22px;
+            font-weight: bold;
+            padding: 12px;
+            border-radius: 6px;
+            display: inline-block;
+        }
+        .negative {
+            background-color: #dc3545;
+            color: white;
+        }
+        .positive {
+            background-color: #28a745;
+            color: white;
+        }
+        .back-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 25px;
+            background: #007BFF;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 16px;
+            transition: 0.3s ease-in-out;
+        }
+        .back-btn:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Prediction Result</h1>
+        
+        <p><strong>Tweet:</strong></p>
+        <div class="tweet-box">
+            {{ tweet }}
+        </div>
+
+        <p><strong>Classification:</strong></p>
+        <p class="result {% if result == 'Negative (Hate Speech)' %}negative{% else %}positive{% endif %}">
+            {{ result }}
+        </p>
+        
+        <br>
+        <a href="/index" class="back-btn">Try Another Tweet</a>
+    </div>
+
+</body>
+</html>
