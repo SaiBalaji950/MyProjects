@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.4)),url('/static/4.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: white;
+            text-align: center;
+        }
+        .container {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 8px;
+            width: 50%;
+            margin: auto;
+        }
+        ol {
+            text-align: left;
+        }
+        a {
+            color: lightblue;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Quiz Results</h1>
+    <div class="container">
+        <p>Accuracy: {{ accuracy }}%</p>
+        <h2>Detailed Results</h2>
+        <ol>
+            {% for result in results %}
+                <li>
+                    <strong>Q:</strong> {{ result['question'] }}<br>
+                    <strong>Your Answer:</strong> {{ result['user_answer'] }}<br>
+                    <strong>Correct Answer:</strong> {{ result['correct_answer'] }}<br>
+                    <strong>Result:</strong> {% if result['is_correct'] %}✅ Correct{% else %}❌ Incorrect{% endif %}
+                </li><br>
+            {% endfor %}
+        </ol>
+        <a href="{{ url_for('select_questions') }}">Try the Quiz again</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.4)),url('/static/4.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: white;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>MCQ Quiz</h1>
+    <div class="container">
+        <form method="post">
+            {% for question in questions %}
+                <p><strong>Q{{ loop.index }}: {{ question['prompt'] }}</strong></p>
+                {% for option in ['A', 'B', 'C', 'D', 'E'] %}
+                    <input type="radio" name="{{ question['prompt'] }}" value="{{ option }}"> {{ option }}: {{ question[option] }}<br>
+                {% endfor %}
+                <br>
+            {% endfor %}
+            <button type="submit">Submit Answers</button>
+        </form>
+    </div>
+</body>
+</html>
