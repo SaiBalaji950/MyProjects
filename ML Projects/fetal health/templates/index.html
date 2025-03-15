@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fetal Health Prediction</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0)),url('/static/5.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 20px;
+    }
+    h1 {
+      justify-content:center;
+      color: whitesmoke;
+      font-size: 50px;
+      margin-bottom: 20px;
+    }
+    table {
+      width: 450px;
+      border-collapse: collapse;
+      background-color: white;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+    }
+    td {
+      padding: 10px;
+    }
+    input[type="text"] {
+      width: 90%;
+      padding: 8px;
+      margin: 5px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    input[type="submit"] {
+      background-color: blue;
+      color: white;
+      border: none;
+      padding: 10px;
+      border-radius: 4px;
+      cursor: pointer;
+      width: 100%;
+    }
+    input[type="submit"]:hover {
+      background-color: darkblue;
+    }
+  </style>
+</head>
+<body>
+  <h1>Fetal Health Estimation</h1>
+  <form action="/predict" method="POST">
+    <table>
+      <tr><td><label>Baseline Value</label></td><td><input type="text" name="baseline_value" required></td></tr>
+      <tr><td><label>Accelerations</label></td><td><input type="text" name="accelerations" required></td></tr>
+      <tr><td><label>Fetal Movement</label></td><td><input type="text" name="fetal_movement" required></td></tr>
+      <tr><td><label>Uterine Contractions</label></td><td><input type="text" name="uterine_contractions" required></td></tr>
+      <tr><td><label>Light Decelerations</label></td><td><input type="text" name="light_decelerations" required></td></tr>
+      <tr><td><label>Severe Decelerations</label></td><td><input type="text" name="severe_decelerations" required></td></tr>
+      <tr><td><label>Prolongued Decelerations</label></td><td><input type="text" name="prolongued_decelerations" required></td></tr>
+      <tr><td><label>Abnormal Short Term Variability</label></td><td><input type="text" name="abnormal_short_term_variability" required></td></tr>
+      <tr><td><label>Mean Value of Short Term Variability</label></td><td><input type="text" name="mean_value_of_short_term_variability" required></td></tr>
+      <tr><td><label>Percentage of Time with Abnormal Long Term Variability</label></td><td><input type="text" name="percentage_of_time_with_abnormal_long_term_variability" required></td></tr>
+      <tr><td><label>Mean Value of Long Term Variability</label></td><td><input type="text" name="mean_value_of_long_term_variability" required></td></tr>
+      <tr><td><label>Histogram Width</label></td><td><input type="text" name="histogram_width" required></td></tr>
+      <tr><td><label>Histogram Min</label></td><td><input type="text" name="histogram_min" required></td></tr>
+      <tr><td><label>Histogram Max</label></td><td><input type="text" name="histogram_max" required></td></tr>
+      <tr><td><label>Histogram Number of Peaks</label></td><td><input type="text" name="histogram_number_of_peaks" required></td></tr>
+      <tr><td><label>Histogram Number of Zeroes</label></td><td><input type="text" name="histogram_number_of_zeroes" required></td></tr>
+      <tr><td><label>Histogram Mode</label></td><td><input type="text" name="histogram_mode" required></td></tr>
+      <tr><td><label>Histogram Mean</label></td><td><input type="text" name="histogram_mean" required></td></tr>
+      <tr><td><label>Histogram Median</label></td><td><input type="text" name="histogram_median" required></td></tr>
+      <tr><td><label>Histogram Variance</label></td><td><input type="text" name="histogram_variance" required></td></tr>
+      <tr><td><label>Histogram Tendency</label></td><td><input type="text" name="histogram_tendency" required></td></tr>
+      <tr><td colspan="2"><input type="submit" value="Predict"></td></tr>
+    </table>
+  </form>
+</body>
+</html>
