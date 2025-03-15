@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sleep Disorder Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.4)),url('/static/6.jpg');
+            background-size: cover; 
+            color:whitesmoke;
+            background-position: center;
+            background-repeat: no-repeat; 
+            background-attachment: fixed;
+            margin: 0; 
+            display: flex; 
+            height:100vh;
+            flex-direction: column; 
+            justify-content: center; 
+            align-items: center; 
+            padding: 20px;
+        }
+        
+        button {
+            font-size: 20px;
+            background-color: lightblue;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            padding: 10px 15px;
+            margin-top: 20px;
+        }
+        button:hover {
+            background-color: deepskyblue;
+        }
+    </style>
+</head>
+<body>
+    <h1>Predicted Sleep Disorder:</h1>
+    <h2>{{ Sleep }}</h2>
+    <a href="/index"><button>Predict Again</button></a>
+    <a href="/performance"><button>Performance Analysis</button></a>
+</body>
+</html>
