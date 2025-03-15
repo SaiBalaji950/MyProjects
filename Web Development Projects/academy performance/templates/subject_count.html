@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CGPA and Percentage Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0)),url('/static/1.webp');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+            margin: 0;
+            color:white;
+            text-align: center;
+        }
+        form {
+            margin: auto;
+            padding: 20px;
+            width: 300px;
+            background: rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        input, button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h2>Semester {{ sem }}: Enter Number of Subjects</h2>
+    <form method="POST">
+        <label>Number of Subjects:</label>
+        <input type="number" name="subject_count" min="1" required>
+        <button type="submit">Next</button>
+    </form>
+</body>
+</html>
+{% endblock %}

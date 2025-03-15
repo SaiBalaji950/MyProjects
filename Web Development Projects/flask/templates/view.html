@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Records</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0)),url('/static/1.jpg');
+            background-size: cover;
+            background-position: absolute;
+            background-repeat: repeat;
+            height: 100vh;
+            margin: 0;
+            color:white;
+            text-align: flex-start;
+        }
+    </style>
+</head>
+<body>
+    <h2>Student Records</h2>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+        </tr>
+        {% for row in result %}
+        <tr>
+            <td>{{ row[0] }}</td>
+            <td>{{ row[1] }}</td>
+            <td>{{ row[2] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <p><a href="{{ url_for('login') }}">Logout</a></p>
+</body>
+</html>

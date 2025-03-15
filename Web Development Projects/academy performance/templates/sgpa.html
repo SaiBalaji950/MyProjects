@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>CGPA and Percentage Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0)),url('/static/4.avif');
+            background-size: cover;
+            background-position: absolute;
+            background-repeat: repeat;
+            height: 100vh;
+            margin: 0;
+            color:white;
+            text-align: flex-start;
+        }
+    </style>
+</head>
+<body>
+    {% extends "base.html" %}
+    {% block content %}
+    <h2>SGPA for Each Semester</h2>
+    <ul>
+        {% for sem, score in sgpa.items() %}
+            <li>Semester {{ sem }}: {{ score }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('cgpa') }}">View Overall CGPA & Percentage</a>
+    {% endblock %}
+
+</body>
+</html>

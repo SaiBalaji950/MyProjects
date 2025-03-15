@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Send OTP</title>
+  <style>
+    body {
+        font-family: Arial, sans-serif;
+        background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0)),url('/static/4.jpg');
+        background-size: cover;
+        background-position: absolute;
+        background-repeat: repeat;
+        height: 100vh;
+        margin: 0;
+        color:white;
+        text-align: center;
+    }
+</style>
+</head>
+<body>
+  <h2>Send OTP</h2>
+  <p>Your registered email: <strong>{{ sender_email }}</strong></p>
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      <ul>
+      {% for category, message in messages %}
+        <li style="color: {% if category == 'danger' %}red{% else %}green{% endif %};">
+          {{ message }}
+        </li>
+      {% endfor %}
+      </ul>
+    {% endif %}
+  {% endwith %}
+  <form method="POST">
+    <label>Gmail App Password:</label>
+    <input type="password" name="app_password" required><br><br>
+    <label>Recipient Email:</label>
+    <input type="email" name="recipient_email" required><br><br>
+    <button type="submit">Send OTP</button>
+  </form>
+  <p><a href="{{ url_for('forgot_password') }}" target="_blank">Forgot Password</a></p>
+</body>
+</html>

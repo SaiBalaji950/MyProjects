@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>CGPA and Percentage Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0)),url('/static/5.avif');
+            background-size: cover;
+            background-position: absolute;
+            background-repeat: repeat;
+            height: 100vh;
+            margin: 0;
+            color:white;
+            text-align: flex-start;
+        }
+    </style>
+</head>
+<body>
+    {% extends "base.html" %}
+    {% block content %}
+    <h2>Overall Result</h2>
+    <p><strong>CGPA:</strong> {{ cgpa }}</p>
+    <p><strong>Percentage:</strong> {{ percentage }}%</p>
+    {% endblock %}
+
+
+</body>
+</html>

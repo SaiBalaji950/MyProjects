@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CGPA and Percentage Calculator</title>
+    <style>
+        body {
+            background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0)), 
+                              url("{{ url_for('static', filename='4.avif') }}");
+            background-size: cover;
+            background-position: center;
+            font-family: Arial, sans-serif;
+            color: white;
+            text-align: center;
+        }
+        form {
+            margin: auto;
+            padding: 20px;
+            width: 300px;
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 10px;
+        }
+        input, button {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: none;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <h2>Enter Student Information</h2>
+    <form method="POST">
+        <label>Roll Number:</label>
+        <input type="text" name="roll_no" required><br><br>
+        
+        <label>Name:</label>
+        <input type="text" name="name" required><br><br>
+        
+        <label>Department:</label>
+        <input type="text" name="department" required><br><br>
+        
+        <button type="submit">Start</button>
+    </form>
+</body>
+</html>
+{% endblock %}

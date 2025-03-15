@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login with App Password</title>
+</head>
+<body>
+    <h2>Login with App Password</h2>
+    <!-- Flash messages -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <ul>
+          {% for category, message in messages %}
+            <li style="color: {% if category == 'danger' %}red{% else %}green{% endif %};">
+              {{ message }}
+            </li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+    <form method="POST">
+        <label>Your Gmail Address:</label>
+        <input type="email" name="email" required><br>
+        
+        <label>Your App Password:</label>
+        <input type="password" name="app_password" required><br>
+        
+        <label>Recipient Email:</label>
+        <input type="email" name="recipient_email" required><br>
+        
+        <button type="submit">Login &amp; Send OTP</button>
+    </form>
+    <br>
+    <a href="{{ url_for('forgot_password') }}" target="_blank">
+      How to Create a Google App Password
+    </a>
+</body>
+</html>
